@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module01Activity01"
+             x:Class="Module01Activity01.MainPage"
+             BackgroundColor="{DynamicResource LocalBackgroundColor}">
+
+    <ContentPage.Resources>
+        <x:String x:Key="StaticUsername">Sangalang, Leandro R.</x:String>
+        <x:String x:Key="DynamicUsername">Mimic Tear</x:String>
+        
+        <Color x:Key="DynamicBoxColor">Blue</Color>
+        <Color x:Key="LocalBackgroundColor">Purple</Color>
+    </ContentPage.Resources>
+
+    <ScrollView>
+      
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="{Binding firstname}"
+                   TextColor="{Binding ColorRed}"/>
+
+            <Label x:Name="StaticResourceLabel" 
+                   Text="{StaticResource StaticUsername}"/>
+
+            <Button Text="Change Label Name" Clicked="OnChangedLabelName"/>
+
+            <Label x:Name="DynamiicResourceLabel" 
+                   Text="{DynamicResource DynamicUsername}"/>
+
+            <Button Text="Change Label Name - Dyanmic" Clicked="OnChangeNameDynamic"/>
+            
+
+            <Button Text="Change Background Color Light Blue" Clicked="OnChangeBackgroundColor"/>
+
+            <Button Text="Change Background Color Light Red" Clicked="OnChangeBackgroundColor1"/>
+
+            <Button Text="Change Background Color White" Clicked="OnChangeBackgroundColor2"/>
+            
+
+            <BoxView HeightRequest="100" WidthRequest="100" Color="{DynamicResource DynamicBoxColor}"/>
+
+            <Button Text="Change box view kulay" Clicked="OnChangeBoxViewColor"/>
+
+            <Label Text="{local:CurrentDateExtension}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
